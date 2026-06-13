@@ -1,0 +1,6 @@
+name: StatPlugin
+version: '${version}'
+
+main: fr.tartare.statPlugin.StatPlugin
+api-version: '1.21'
+load: POSTWORLD
