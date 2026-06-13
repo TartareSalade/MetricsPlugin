@@ -1,0 +1,15 @@
+#maven
+*.class
+*.jar
+*.war 
+*.ear
+
+
+#idea
+
+.idea/
+
+
+.env
+.env.*
+.local
