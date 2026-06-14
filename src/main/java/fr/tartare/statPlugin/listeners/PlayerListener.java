@@ -28,7 +28,7 @@ public class PlayerListener implements Listener {
          // get the player who triggered the event
         Player p = event.getPlayer();
         UUID playerUUID = p.getUniqueId();
-        String playerName = String.valueOf(p.displayName());
+        String playerName = p.getName();
         String worldName = p.getWorld().getName();
         long timestamp = System.currentTimeMillis();
         System.out.println("[MetricPlugin] " + eventName + " triggered by player " + playerName + " (UUID: " + playerUUID + ") in world " + worldName + " at timestamp " + timestamp);
@@ -43,7 +43,7 @@ public class PlayerListener implements Listener {
 
         Player player = event.getPlayer();
         UUID playerUUID = player.getUniqueId();
-        String playerName = String.valueOf(player.displayName());
+        String playerName = player.getName();
         String worldName = player.getWorld().getName();
         long timestamp = System.currentTimeMillis();
         System.out.println("[MetricPlugin] " + eventName + " triggered by player " + playerName + " (UUID: " + playerUUID + ") in world " + worldName + " at timestamp " + timestamp);
@@ -64,7 +64,7 @@ public class PlayerListener implements Listener {
          */
         Player player = event.getPlayer();
         UUID playerUUID = player.getUniqueId();
-        String playerName = String.valueOf(player.displayName());
+        String playerName = player.getName();
         String blockType = event.getBlock().getType().toString();
         String worldName = player.getWorld().getName();
         //var pos = player.getPose();
