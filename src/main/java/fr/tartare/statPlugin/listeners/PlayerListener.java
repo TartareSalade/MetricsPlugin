@@ -5,7 +5,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.player.PlayerItemBreakEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.UUID;
 
@@ -29,5 +32,25 @@ public class PlayerListener implements Listener {
         long timestamp = System.currentTimeMillis();
         System.out.println("[MetricPlugin] " + eventName + " triggered by player " + playerName + " (UUID: " + playerUUID + ") in world " + worldName + " at timestamp " + timestamp);
 
+    }
+
+
+    @EventHandler
+    public void onPlayerLeave(PlayerQuitEvent event){
+        Class<? extends Event> eventType = event.getClass();
+        String eventName = eventType.getSimpleName();
+
+        Player player = event.getPlayer();
+        UUID playerUUID = player.getUniqueId();
+        String playerName = String.valueOf(player.displayName());
+        String worldName = player.getWorld().getName();
+        long timestamp = System.currentTimeMillis();
+        System.out.println("[MetricPlugin] " + eventName + " triggered by player " + playerName + " (UUID: " + playerUUID + ") in world " + worldName + " at timestamp " + timestamp);
+    }
+
+    @EventHandler
+    public void onBreakEvent(BlockBreakEvent event){
+        Class<? extends Event> eventType = event.getClass();
+        String eventName = eventType.getSimpleName();
     }
 }
