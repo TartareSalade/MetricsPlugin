@@ -1,0 +1,11 @@
+# Exemple minimal d'un workflow
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: mvn clean package
